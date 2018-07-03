@@ -1,0 +1,54 @@
+#%RAML 1.0
+title: sampleraml
+version: v1
+baseUri: https://mocksvc.mulesoft.com/mocks/7bad2d70-7c7d-4de1-9e72-f0d5c00b7f65 # baseUri: http://localhost:8080
+protocols:  HTTPS
+mediaType: application/json
+/empdetails:
+  description: dscribes about methods
+  post:
+   body: 
+    application/json:
+     schema: |
+      {
+         "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+              "properties": {
+               "empname": {
+                "type": "string"
+                 },
+              "empid": {
+               "type": "string"
+                },
+              "empsal": {
+               "type": "integer"
+               }
+              },
+           "required": [
+             "empname",
+             "empid",
+             "empsal"
+                      ]
+      }
+     example: 
+          { 
+            "empname":"veeru",
+             "empid": "1",
+             "empsal": 1000
+           }
+   responses: 
+    200:
+     body: 
+      application/json:
+       example: 
+        {"statuscode":"success"}
+      
+     
+    
+     
+             
+      
+     
+    
+ 
+
